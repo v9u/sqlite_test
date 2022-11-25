@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sqlite3 Test</title>
+</head>
+
+<body>
+  <div
+    style="display: grid;grid-template-columns: 1fr;grid-template-rows: 30px 30px 30px calc( 100% - 90px );">
+    <h1>Insert Data:</h1>
+    <input type="text" value="test" id="text" />
+    <button id="btn">insert </button>
+    <div id="log">
+      <p>log:</p>
+    </div>
+    
+  </div>
+  <script>
+    const btn = document.getElementById('btn')
+    const input = document.getElementById('text')
+    const log = document.getElementById('log')
+    btn.onclick = async (e) => {
+      const text = input.value
+      const p = document.createElement('p')
+        p.innerText = 'insert data:' + text + `(${(new Date).toLocaleString()})`
+        log.appendChild(p)
+        electron?.insertData(text).then(res=>{
+            p.innerText+=',return:\n\n'+JSON.stringify(res)
+        }).catch(e=>{
+          p.innerText+=',err:\n' + e.message
+          console.log(`insert data:${text} err:`,e)
+        })
+
+    }
+  </script>
+</body>
+
+</html>

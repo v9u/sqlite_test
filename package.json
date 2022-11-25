@@ -1,0 +1,44 @@
+{
+  "name": "db_test",
+  "version": "1.0.9",
+  "main": "main.js",
+  "devDependencies": {
+    "@electron/rebuild": "^3.2.10",
+    "electron": "^21.3.0",
+    "electron-builder": "^23.6.0"
+  },
+  "scripts": {
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    "install-app-deps": "electron-builder install-app-deps",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "productName": "sqlite3-test",
+    "appId": "com.leon.test",
+    "copyright": "me",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "nsis": {
+      "artifactName": "${productName}_setup.${ext}",
+      "perMachine": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sqlite3": "^5.1.2"
+  }
+}
