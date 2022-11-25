@@ -2,7 +2,9 @@
 ## build failed
 
 ## 1.init: `pnpm i`
-## 2.start: `pnpm start`
+## 2.start(success): `pnpm start`:
+> ![](https://github.com/v9u/sqlite_test/blob/main/start_failed.png)
+
 ## 3.build(failed): `pnpm build`:
 ```
 PS F:\t\db_test> pnpm build
