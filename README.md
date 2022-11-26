@@ -24,3 +24,7 @@ PS F:\t\db_test>
 
 ```
 > ![](https://github.com/v9u/sqlite_test/blob/main/buld_failed.png)
+
+
+## fix build failed:
+> open file `C:\Users\Administrator\AppData\Local\pnpm\global\5\.pnpm\registry.npmmirror.com+pnpm@7.17.0\node_modules\pnpm\bin\pnpm.cjs`, replace `#!/usr/bin/env node` with `#!node`,
