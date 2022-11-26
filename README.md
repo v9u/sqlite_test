@@ -26,5 +26,5 @@ PS F:\t\db_test>
 > ![](https://github.com/v9u/sqlite_test/blob/main/buld_failed.png)
 
 
-## fix build failed:
+## fix build failed(from https://github.com/electron-userland/electron-builder/issues/6933#issuecomment-1213438889):
 > open file `C:\Users\Administrator\AppData\Local\pnpm\global\5\.pnpm\registry.npmmirror.com+pnpm@7.17.0\node_modules\pnpm\bin\pnpm.cjs`, replace `#!/usr/bin/env node` with `#!node`,
