@@ -11,7 +11,7 @@ shamefully-hoist=true
 ## 4.build: `pnpm build`
 
 
-## error and fix:
+# error and fix:
 ### 1. No such file or directory:  "../../../../[folder]/nothing.c"
 >fix: path too long! use short path
 
