@@ -1,11 +1,21 @@
-# sqlite_test
-## build failed
+# pnpm install sqlite3 demo, for electron project 
 
-## 1.init: `pnpm i`
-## 2.start(success): `pnpm start`:
-> ![](https://github.com/v9u/sqlite_test/blob/main/start_failed.png)
+## 1.edit `.npmrc` file(ref:https://www.electron.build/index.html#note-for-pnpm):
+```
+node-linker=hoisted
+public-hoist-pattern=*
+shamefully-hoist=true
+```
+## 2.init: `pnpm i`,
+## 3.dev: `pnpm start`
+## 4.build: `pnpm build`
 
-## 3.build(failed): `pnpm build`:
+
+## error and fix:
+### 1. No such file or directory:  "../../../../[folder]/nothing.c"
+>fix: path too long! use short path
+
+### 2. `node_modules\pnpm\bin\pnpm.cjs: %1 is not a valid Win32 application.`:
 ```
 PS F:\t\db_test> pnpm build
 
@@ -23,8 +33,6 @@ rch=x64
 PS F:\t\db_test>
 
 ```
-> ![](https://github.com/v9u/sqlite_test/blob/main/buld_failed.png)
 
-
-## fix build failed(from https://github.com/electron-userland/electron-builder/issues/6933#issuecomment-1213438889):
-> open file `C:\Users\Administrator\AppData\Local\pnpm\global\5\.pnpm\registry.npmmirror.com+pnpm@7.17.0\node_modules\pnpm\bin\pnpm.cjs`, replace `#!/usr/bin/env node` with `#!node`,
+> fix :(ref: https://github.com/electron-userland/electron-builder/issues/6933#issuecomment-1213438889):
+> open file `C:\Users\Administrator\AppData\Local\pnpm\global\5\.pnpm\registry.npmmirror.com+pnpm@7.17.0\node_modules\pnpm\bin\pnpm.cjs`, replace `#!/usr/bin/env node` with `#!node`
